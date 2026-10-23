@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# EL VAULT NUNCA SE SUBE (tiene tus contraseñas, aunque esté cifrado)
+vault.dat
+*.dat
