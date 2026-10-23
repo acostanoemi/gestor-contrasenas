@@ -23,18 +23,31 @@ Si olvidás la master password, se perdió el vault. No hay "recuperar contrase�
 sudo apt install python3-cryptography
 ```
 
+- Para el comando `copy` (portapapeles): `sudo apt install xclip`
+- El comando `check` necesita conexión a internet (consulta HaveIBeenPwned).
+
 ## Uso
 
 ```bash
 python3 gestor.py init                # crear el vault (pide master password)
 python3 gestor.py add github          # agregar una entrada
 python3 gestor.py get github          # ver una entrada
+python3 gestor.py copy github         # copiar la contraseña (se borra a los 20s)
 python3 gestor.py list                # listar los nombres guardados
 python3 gestor.py delete github       # borrar una entrada
 python3 gestor.py gen --largo 24      # generar una contraseña fuerte
+python3 gestor.py check               # revisar TODO el vault contra filtraciones
 ```
 
 Al agregar una entrada, si dejás la contraseña vacía, genera una fuerte automáticamente.
+
+### Copiar al portapapeles
+
+`copy` pone la contraseña en el portapapeles y la **borra sola a los 20 segundos** (el portapapeles lo puede leer cualquier programa). Necesita `xclip` (o `xsel`/`wl-copy`).
+
+### Revisar filtraciones
+
+`check` recorre todas las contraseñas del vault y chequea cada una contra la base de **HaveIBeenPwned** usando k-anonymity: nunca manda una contraseña, solo los primeros 5 caracteres de su hash. Te dice cuáles están filtradas para que las cambies.
 
 ## Seguridad
 
@@ -45,6 +58,7 @@ Al agregar una entrada, si dejás la contraseña vacía, genera una fuerte autom
 ## Roadmap
 
 - [x] v1: vault cifrado, agregar/ver/listar/borrar, generador de contraseñas
-- [ ] v2: copiar la contraseña al portapapeles y limpiarlo a los 20 segundos
-- [ ] v3: exportar/importar el vault (backup cifrado)
-- [ ] v4: código de recuperación generado al crear el vault
+- [x] v2: copiar al portapapeles con limpieza automática
+- [x] v3: comando `check` (revisar todo el vault contra HaveIBeenPwned)
+- [ ] v4: exportar/importar el vault (backup cifrado)
+- [ ] v5: código de recuperación al crear el vault
