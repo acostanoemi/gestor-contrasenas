@@ -1,3 +1,4 @@
+![tests](https://github.com/acostanoemi/gestor-contrasenas/actions/workflows/tests.yml/badge.svg)
 # gestor-contraseñas
 
 Gestor de contraseñas (password manager) por línea de comandos, local y **zero-knowledge**. Guarda tus contraseñas cifradas en un único archivo protegido por una master password. Todo se cifra y descifra en tu máquina; la master password nunca se guarda.
@@ -10,7 +11,7 @@ Gestor de contraseñas (password manager) por línea de comandos, local y **zero
 
 La master password **nunca** se guarda en ningún lado, ni siquiera cifrada.
 
-## ⚠️ No hay recuperación
+##  No hay recuperación
 
 Si olvidás la master password, se perdió el vault. No hay "recuperar contraseña". Eso es la prueba de que está bien cifrado: ni vos ni nadie puede abrirlo sin ella. Anotá tu master password en un lugar seguro y offline.
 
