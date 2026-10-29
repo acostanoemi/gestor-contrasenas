@@ -1,7 +1,9 @@
 ![tests](https://github.com/acostanoemi/gestor-contrasenas/actions/workflows/tests.yml/badge.svg)
 # gestor-contraseñas
 
-Gestor de contraseñas (password manager) por línea de comandos, local y **zero-knowledge**. Guarda tus contraseñas cifradas en un único archivo protegido por una master password. Todo se cifra y descifra en tu máquina; la master password nunca se guarda.
+![demo](gestor-demo.gif)
+
+Gestor de contraseñas (password manager) por línea de comandos, local y **zero-knowledge**. Guarda tus contraseñas cifradas en un único archivo protegido por una master password. Todo se cifra y descifra en tu máquina; la master password nunca se guarda. Probado con pytest y CI en GitHub Actions.
 
 ## Cómo funciona la criptografía
 
